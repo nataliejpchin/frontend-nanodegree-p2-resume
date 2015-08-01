@@ -102,7 +102,7 @@ if (bio.skills.length > 0) {
  }
  
  for (job in work.jobs){
-   //append a new HTMLworkStart element for each one
+   //create new div for work experience
    $("#workExperience").append(HTMLworkStart);
    
    //replace %data% in HTMLworkEmployer with each job's employer
@@ -111,6 +111,15 @@ if (bio.skills.length > 0) {
    //replace %data% in HTMLworkTitle with each job's title
    var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
    
+   //replace %data% in HTMLworkLocation with each job's location
+   var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+   
+   //replace %data% in HTMLworkDates with each job's dates
+   var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+   
+   //replace %data% in HTMLworkDescription with each job's description
+   var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+   
    //append a concatenation of employer and title each to the element with class work-entry:last
-   $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle);
+   $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle + formattedWorkLocation + formattedWorkDates + formattedWorkDescription);
  }
