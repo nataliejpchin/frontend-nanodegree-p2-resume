@@ -10,6 +10,13 @@ This is empty on purpose! Your code to build the resume will go here.
             "location": "Washington, DC",
             "dates": "2012 to now",
             "description": "Annie Walker is a CIA operative with gorgeous girl-next-door looks and the instincts and intelligence of a gifted spy. A brilliant linguist with a thirst for adventure, Annie was plucked from CIA training at the Farm to work in the Agency's Domestic Protection Division, taking on cases both close to home and across the world. Calm under fire and quick on her feet, Annie quickly proved herself to be a resourceful and effective agent, whether recruiting new assets or facing down ruthless enemies of the state."
+        },
+        {
+            "employer": "CIA2",
+            "title": "CIA Officer2",
+            "location": "secret",
+            "dates": "don't know'",
+            "description": "Top secret missions"
         }
     ]
 }
