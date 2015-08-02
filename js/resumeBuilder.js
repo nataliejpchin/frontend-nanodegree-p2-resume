@@ -130,3 +130,11 @@ if (bio.skills.length > 0) {
    //append a concatenation of employer and title each to the element with class work-entry:last
    $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle + formattedWorkLocation + formattedWorkDates + formattedWorkDescription);
  }
+ 
+ //collect where the location of the clicks
+ $(document).click(function(loc){
+   var x = loc.pageX;
+   var y = loc.pageY;
+   
+   logClicks(x,y);
+ });
