@@ -90,6 +90,11 @@ var bio = {
         }
     ]
 }
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").append(formattedName);
+
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").append(formattedRole);
 
 if (bio.skills.length > 0) {
    $("#header").append(HTMLskillsStart);
@@ -138,3 +143,24 @@ if (bio.skills.length > 0) {
    
    logClicks(x,y);
  });
+ 
+/*create function called inName() that takes in a string of two names and returns an internationalized version that looks like so: Annie WALKER*/
+
+//append internationalizeButton to the main div
+$("#main").append(internationalizeButton);
+ 
+function inName() {
+    var name = bio.name;
+        
+    //create a variable called names and set it into the array of the names after separating it
+    var names = name.split(" ");
+    
+    //change the last name to be uppercase
+    names[1] = names[1].toUpperCase();
+    
+    //join the first and last names back to be a string
+    name = names.join(" ");
+    
+    //return the string
+    return name;
+};
