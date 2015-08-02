@@ -55,7 +55,7 @@ var bio = {
     "name": "Annie Walker",
     "welcomeMessage": "Hey there! Do you watch Covert Affairs?",
     "role": "Gifted Spy",
-    "contactInfo": {
+    "contacts": {
         "mobile": "top secret",
         "email": "anniewalker@",
         "github": "https://github.com/njpchin",
@@ -173,6 +173,11 @@ projects.display = function() {
 
 //calling the projects.display function to display project information
 projects.display();
+
+//show Google Map
+$("#mapDiv").append(googleMap);
+
+
 
 
 
