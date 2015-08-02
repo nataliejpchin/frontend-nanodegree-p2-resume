@@ -144,23 +144,35 @@ if (bio.skills.length > 0) {
    logClicks(x,y);
  });
  
-/*create function called inName() that takes in a string of two names and returns an internationalized version that looks like so: Annie WALKER*/
+//Encapsulate display() within the projects object and append all of the projects to the projects section
+projects.display = function() {
+  for (project in projects.projects){
+    //create new div for projects
+    $("#projects").append(HTMLprojectStart);
+    
+    //replace %data% in HTMLworkEmployer with each project's title
+    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+   
+    //replace %data% in HTMLprojectDates with each project's title'
+    var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+   
+    //replace %data% in HTMLprojectDescription with each project's description'
+    var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+   
+    //replace %data% in HTMLprojectImage with each project's images
+    if (projects.projects[project].images.length > 0){
+      for (image in projects.projects[project].images){
+        var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+      }
+    }
+      
+    //append project information to with class project-entry:last
+    $(".project-entry:last").append(formattedProjectTitle + formattedProjectDates + formattedProjectDescription + formattedProjectImage);
+  }
+}
 
-//append internationalizeButton to the main div
-$("#main").append(internationalizeButton);
- 
-function inName() {
-    var name = bio.name;
-        
-    //create a variable called names and set it into the array of the names after separating it
-    var names = name.split(" ");
-    
-    //change the last name to be uppercase
-    names[1] = names[1].toUpperCase();
-    
-    //join the first and last names back to be a string
-    name = names.join(" ");
-    
-    //return the string
-    return name;
-};
+//calling the projects.display function to display project information
+projects.display();
+
+
+
