@@ -135,7 +135,6 @@ bio.display = function() {
 bio.display();
   
 
- 
 //Encapsulate display() within the work object and append all of the work to the work section
 work.display = function(){
   
@@ -176,6 +175,68 @@ $(document).click(function(loc){
   logClicks(x,y);
 });
  
+
+//Encapsulate display() within the education object and append all of the education information to the education section
+education.display = function() {
+  
+  for (school in education.schools){
+    
+    //create new div for education
+    $("#education").append(HTMLschoolStart);
+    
+    //replace placeholder text with school name
+    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+   
+    //replace placeholder text with school location
+    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+   
+    //replace placeholder text with school degree
+    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+    
+    //replace placeholder text with school dates attended
+    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+   
+    //replace placeholder text with school major
+    if (education.schools[school].majors.length > 0){
+      for (major in education.schools[school].majors){
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+      }  
+    }
+  
+    //append project information to with class project-entry:last
+    $(".education-entry:last").append(formattedSchoolName + formattedSchoolLocation + formattedSchoolDegree + formattedSchoolDates + formattedSchoolMajor);
+  
+  }
+  
+  //insert online classes header
+  $("#education").append(HTMLonlineClasses);
+  
+  for (onlineCourse in education.onlineCourses){
+    
+    //create new div for education
+    $("#education").append(HTMLschoolStart);
+    
+    //replace placeholder text with online course title
+    var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+   
+    //replace placeholder text with online course school
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+   
+    //replace placeholder text with online course dates finished
+    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+   
+    //replace placeholder text with online course URL
+    var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
+    
+   //append project information to with class project-entry:last
+    $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL);
+  }
+}
+
+//calling the projects.display function to display project information
+education.display();
+
+
 //Encapsulate display() within the projects object and append all of the projects to the projects section
 projects.display = function() {
   
@@ -207,6 +268,7 @@ projects.display = function() {
 
 //calling the projects.display function to display project information
 projects.display();
+
 
 //show Google Map
 $("#mapDiv").append(googleMap);
