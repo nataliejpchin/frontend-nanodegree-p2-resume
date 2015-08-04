@@ -113,36 +113,43 @@ if (bio.skills.length > 0) {
    $("#skills").append(formattedSkill);
  }
  
- for (job in work.jobs){
-   //create new div for work experience
-   $("#workExperience").append(HTMLworkStart);
+//Encapsulate display() within the work object and append all of the work to the work section
+work.display = function(){
+  for (job in work.jobs){
+  //create new div for work experience
+  $("#workExperience").append(HTMLworkStart);
    
-   //replace %data% in HTMLworkEmployer with each job's employer
-   var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  //replace %data% in HTMLworkEmployer with each job's employer
+  var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
    
-   //replace %data% in HTMLworkTitle with each job's title
-   var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  //replace %data% in HTMLworkTitle with each job's title
+  var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
    
-   //replace %data% in HTMLworkLocation with each job's location
-   var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+  //replace %data% in HTMLworkLocation with each job's location
+  var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
    
-   //replace %data% in HTMLworkDates with each job's dates
-   var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  //replace %data% in HTMLworkDates with each job's dates
+  var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
    
-   //replace %data% in HTMLworkDescription with each job's description
-   var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  //replace %data% in HTMLworkDescription with each job's description
+  var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
    
-   //append a concatenation of employer and title each to the element with class work-entry:last
-   $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle + formattedWorkLocation + formattedWorkDates + formattedWorkDescription);
- }
+  //append a concatenation of employer and title each to the element with class work-entry:last
+  $(".work-entry:last").append(formattedWorkEmployer + formattedWorkTitle + formattedWorkLocation + formattedWorkDates + formattedWorkDescription);
+  }
+}
+
+//calling the work.display function to display work information
+work.display();
+
  
- //collect where the location of the clicks
- $(document).click(function(loc){
-   var x = loc.pageX;
-   var y = loc.pageY;
+//collect where the location of the clicks
+$(document).click(function(loc){
+  var x = loc.pageX;
+  var y = loc.pageY;
    
-   logClicks(x,y);
- });
+  logClicks(x,y);
+});
  
 //Encapsulate display() within the projects object and append all of the projects to the projects section
 projects.display = function() {
