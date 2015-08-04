@@ -53,7 +53,6 @@ var projects = {
   
 var bio = {
     "name": "Annie Walker",
-    "welcomeMessage": "Hey there! Do you watch Covert Affairs?",
     "role": "Gifted Spy",
     "contacts": {
         "mobile": "top secret",
@@ -62,9 +61,10 @@ var bio = {
         "twitter": "https://twitter.com/covertaffairs",
         "location": "Danielle's guest house'"
     },
+    "welcomeMessage": "Hey there! Do you watch Covert Affairs?",
     "skills": [
-        "Speaks seven languages", "Quick thinker", "Good fighter", "Target shooter"
-    ]
+        "Speaks seven languages", "Quick thinker", "Good fighter", "Target shooter"],
+    "biopic": "images/fry.jpg"
 }
  
  
@@ -90,32 +90,57 @@ var bio = {
         }
     ]
 }
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").append(formattedName);
 
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").append(formattedRole);
+//Encapsulate display() within the bio object and append all of the information to the bio section
+bio.display = function() {
+  
+  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  $("#header").prepend(formattedRole);
+  
+  var formattedName = HTMLheaderName.replace("%data%", bio.name);
+  $("#header").prepend(formattedName);
 
-if (bio.skills.length > 0) {
-   $("#header").append(HTMLskillsStart);
-   
-   
-   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-   $("#skills").append(formattedSkill);
-   
-   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-   $("#skills").append(formattedSkill);
-   
-   formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-   $("#skills").append(formattedSkill);
-   
-   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-   $("#skills").append(formattedSkill);
- }
+  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+  $("#header").append(formattedBioPic);
+  
+  var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  $("#header").append(formattedWelcomeMsg);
+  
+  for (var contact in bio.contacts) {
+
+    //replace placeholder text with contact label and value
+    var formattedContact = HTMLcontactGeneric.replace("%contact%", contact).replace("%data%", bio.contacts[contact]);
+
+    //insert contact info at the topContacts and footerContacts divs
+    $("#topContacts").append(formattedContact);
+    $("#footerContacts").append(formattedContact);
+  };
+  
+  if (bio.skills.length > 0) {
+    
+    $("#header").append(HTMLskillsStart);
+          
+    for (skill in bio.skills){
+      
+      //replace placeholder text with skills
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+      
+      //insert skills at the skills div
+      $("#skills").append(formattedSkill);
+    }  
+  }
+}
+
+//calling the bio.display function to display bio information
+bio.display();
+  
+
  
 //Encapsulate display() within the work object and append all of the work to the work section
 work.display = function(){
+  
   for (job in work.jobs){
+    
   //create new div for work experience
   $("#workExperience").append(HTMLworkStart);
    
@@ -153,7 +178,9 @@ $(document).click(function(loc){
  
 //Encapsulate display() within the projects object and append all of the projects to the projects section
 projects.display = function() {
+  
   for (project in projects.projects){
+    
     //create new div for projects
     $("#projects").append(HTMLprojectStart);
     
