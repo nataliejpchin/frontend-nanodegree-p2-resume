@@ -5,18 +5,11 @@ This is empty on purpose! Your code to build the resume will go here.
  var work = {
     "jobs": [
         {
-            "employer": "CIA",
-            "title": "CIA Officer",
-            "location": "Washington, DC",
-            "dates": "2012 to now",
-            "description": "Annie Walker is a CIA operative with gorgeous girl-next-door looks and the instincts and intelligence of a gifted spy. A brilliant linguist with a thirst for adventure, Annie was plucked from CIA training at the Farm to work in the Agency's Domestic Protection Division, taking on cases both close to home and across the world. Calm under fire and quick on her feet, Annie quickly proved herself to be a resourceful and effective agent, whether recruiting new assets or facing down ruthless enemies of the state."
-        },
-        {
-            "employer": "CIA2",
-            "title": "CIA Officer2",
-            "location": "secret",
-            "dates": "don't know'",
-            "description": "Top secret missions"
+            "employer": "University of Nebraska-Lincoln Center on Children, Families, and the Law (CCFL)",
+            "title": "E-Learning Developer",
+            "location": "Lincoln, NE",
+            "dates": "June 2011 to present",
+            "description": "Develop instructional materials for online trainings. Design and produce graphics, audio, and video for print and online trainings. Provide technical assistance for websites and learning management systems. Design websites for various clients."
         }
     ]
 }
@@ -24,27 +17,19 @@ This is empty on purpose! Your code to build the resume will go here.
 var projects = {
     "projects": [
         {
-            "title": "Operation retrieve information from a Russian spy at a hotel",
-            "dates": "Season 1 Episode 1",
-            "description": "Because of her ability to speak six languages fluently, the CIA wants Annie to make contact with a Russian assassin, Stas, who is holed up at a motel in Washington DC. She is to use a gadget to transmit and store sensitive intelligence from his smartphone. Of course, her first day is anything but routine when a sniper takes out Stas and nearly kills Annie in a hail of bullets; from here on out, Annie's training will come on the job. ",
+            "title": "Nebraska Parent Educator Professionals Website",
+            "dates": "2014",
+            "description": "Designed a Drupal website for Nebraska Parent Educator Professionals Website",
             "images": [
-                "http://www.usanetwork.com/sites/usanetwork/files/101-22.jpg"
+                "images/pepteam.png"
             ]
         },
         {
-            "title": "Pose as a potential recruit for diamond smugglers in London and convince them to hire her",
-            "dates": "Season 1 Episode 10",
-            "description": "DPD has its sights on a pharmacist, Don Ridley, who has been a major conduit for an Angolan diamond smuggling ring from the UK to the U.S. After the FBI captures Ridley at an airport, Joan wants to keep the smuggling ring going so they can find out who is masterminding the operation. Now, Annie and Jai must pack their bags for London. ",
+            "title": "Nebraska Home Visiting Online Training",
+            "dates": "2011",
+            "description": "Develop online training for home visitors in Nebraska. This course has been nationally recognized by Zero to Three and is currently being adapted for Florida Home Visiting curriculum.",
             "images": [
-                "http://www.usanetwork.com/sites/usanetwork/files/ca_110-8.jpg"
-            ]
-        },
-        {
-            "title": "Protect an Estonian tennis player",
-            "dates": "Season 2 Episode 1",
-            "description": "Annie is tasked to bring down an Estonian mobster named Morozov. He's connected to Russian arms dealers and murders. The CIA has been receiving intelligence about Morozov through his mistress, a pro tennis player named Nadia. But when Annie approaches Nadia for more information, she makes it known that she no longer wants to work with the CIA.",
-            "images": [
-                "http://www.usanetwork.com/sites/usanetwork/files/covertaffairs_201-9.JPG"
+                "images/ne-home-visiting.png"
             ]
         }
     ]
@@ -52,41 +37,41 @@ var projects = {
 
 
 var bio = {
-    "name": "Annie Walker",
-    "role": "Gifted Spy",
+    "name": "Natalie Chin",
+    "role": "Aspiring Web Developer",
     "contacts": {
-        "mobile": "top secret",
-        "email": "anniewalker@",
+        "mobile": "123-456-7890",
+        "email": "natalie.j.chin@gmail.com",
         "github": "https://github.com/njpchin",
-        "twitter": "https://twitter.com/covertaffairs",
-        "location": "Danielle's guest house'"
+        "twitter": "https://twitter.com/njpchin",
+        "location": "Lincoln, NE'"
     },
-    "welcomeMessage": "Hey there! Do you watch Covert Affairs?",
+    "welcomeMessage": "Hello!",
     "skills": [
-        "Speaks seven languages", "Quick thinker", "Good fighter", "Target shooter"],
-    "biopic": "images/fry.jpg"
+        "HTML", "CSS", "Javascript", "Git"],
+    "biopic": "images/natalie.jpg"
 }
 
 
  var education = {
     "schools": [
         {
-            "name": "University of Maryland University College",
-            "location": "Adelphi, MD",
-            "degree": "Bachelor of Science",
+            "name": "University of Nebraska-Lincoln",
+            "location": "Lincoln, NE",
+            "degree": "Master of Arts",
             "majors": [
-                "Criminal Justice"
+                "Management Information Systems"
             ],
             "dates": 2010,
-            "url": "http://www.umuc.edu/academic-programs/bachelors-degrees/criminal-justice-major.cfm"
+            "url": "http://www.unl.edu"
         }
     ],
     "onlineCourses": [
         {
-            "title": "CIA training",
-            "school": "CIA",
-            "dates": 2012,
-            "url": "#"
+            "title": "Front-End Web Developer",
+            "school": "Udacity",
+            "dates": 2015,
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
         }
     ]
 }
