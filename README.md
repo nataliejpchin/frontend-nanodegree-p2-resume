@@ -6,4 +6,4 @@ This is the second project for Udacity Frontend Web Developer Nanodegree course.
 1. Clone this repository or download zip link
 2. Unzip folder and double click on index.html
 
-**OR** view the project here http://njpchin.github.io/frontend-nanodegree-p2-resume
+**OR** view the project here http://nataliejpchin.github.io/frontend-nanodegree-p2-resume
