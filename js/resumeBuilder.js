@@ -21,7 +21,7 @@ var projects = {
             "dates": "2014",
             "description": "Designed a Drupal website for Nebraska Parent Educator Professionals Website",
             "images": [
-                "images/pepteam.png"
+                "images/pepteam.PNG"
             ]
         },
         {
